@@ -1,0 +1,95 @@
+:root{
+    --title-font: arial;
+}
+
+#title{
+    font-family: var(--title-font);
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media only screen and (min-width:600px) {
+    /*desktop*/
+    body {
+        font-family: var(--title-font);
+    }
+    #letters {
+        margin: auto;
+        margin-top:3%;
+        margin-bottom:3%;
+        padding:20px;
+
+        border:none;
+        background-color: #9bbcff;
+        border-radius: 20px;
+        
+        color: white;
+
+        user-select: none;
+
+        text-align: center;
+        font-weight: bold;
+        font-size:20px;
+    }
+
+    div#letters{
+        width: 550px;
+    }
+
+    span{
+        width:15px;
+    }
+
+    #listings{
+        padding: 10px;
+        width: 590px;
+
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .widget{
+        background-color:gray;
+        margin-left: none;
+        padding: 35px;
+        border-radius: 20px;
+    }
+
+    .widget.double{
+        width: 290px;
+        text-align: center;
+        
+    }
+
+    .widget.single{
+        width: 170px;
+    }
+
+    #widget-animation {
+        width:240px;
+        margin: 15px 25px;
+        border-radius: 12px;
+    }
+
+    #widget-title{
+        color:white;
+        font-weight: bold;
+        font-size: 28px;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    #widget-desc{
+        color:white;
+    }
+
+    
+
+
+}
+
+@media only screen and (max-width:600px) {
+    /*mobile*/
+
+}
