@@ -13,6 +13,27 @@
     margin-right:auto;
 }
 
+
+@keyframes glideUpwards {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+      display: block;
+    }
+    100% {
+      transform: translateY(-500px);
+      opacity: 0;
+      display: block;
+    }
+  }
+
+.glideAway {
+    opacity: 0;
+    animation: glideUpwards 1s;
+    display: none;
+}
+  
+
 @media only screen and (min-width:600px) {
     /*desktop*/
     body {
@@ -63,7 +84,6 @@
     .widget.double{
         width: 290px;
         text-align: center;
-        
     }
 
     .widget.single{
@@ -86,21 +106,25 @@
 
     #widget-desc{
         color:white;
+        font-size: 16.6px;
     }
 
     #start{
         display: block;
         position:absolute;
         background-color: #a59bff;
-        border-radius: 33.6px;
         z-index: 9999;
-        top: 20%;
-        left: 10%;
-        width: calc(80% - 40px);
-        height: 60%;
-        padding: 20px;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: none;
+        color: white;
 
+    }
 
+    #start-title {
+        font-size: 28px;
     }
 
 

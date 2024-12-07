@@ -149,7 +149,7 @@ document.addEventListener("keyup", function(event){
 });
 
 const start = function(){ // entry point
-    
+    document.getElementById("start").className += " glideAway"
 }
 
 createLetters();
