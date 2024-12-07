@@ -4,6 +4,8 @@ let lettersDiv = null;
 let onLoaded = null;
 let hasLetterClicked = false;
 let currentLetter = "";
+let interaction = false;
+let DOMContentLoaded = false;
 
 //helper functions
 
@@ -125,6 +127,8 @@ const switchToNextLetter = function(){
 // event listers
 
 document.addEventListener("DOMContentLoaded", function(){
+    DOMContentLoaded = true;
+
     //add the letters to the menu bar
     container = document.getElementById("listings");
     if (lettersDiv != null){
@@ -141,6 +145,8 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 document.addEventListener("keyup", function(event){
+    interaction = true; 
+    
     if (event.code == "Space") {
         switchToNextLetter();
     }
