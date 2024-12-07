@@ -46,7 +46,7 @@ const widgetAnimation = function(name, path, description, color, double = false,
     widget.style.backgroundColor = color;
 
     video.controls = controls;
-    video.autoplay = true;
+    video.autoplay = false;
     source.src = path;
     source.type = "video/mp4";
     // todo: add more attributes here
@@ -149,9 +149,10 @@ document.addEventListener("keyup", function(event){
 });
 
 const start = function(){ // entry point
-    createLetters();
+    
 }
 
+createLetters();
 
 // Functions for letters
 
