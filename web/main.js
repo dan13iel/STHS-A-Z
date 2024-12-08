@@ -85,6 +85,7 @@ const widgetText = function(name, text, color, double = false, whitespace = 1){
     let widget = document.createElement("div");
     let title = document.createElement("span");
     let desc = document.createElement("span");
+    //let mapIcons = document.createElement()
 
     widget.id = "widget-" + name;
     title.id = "widget-title";
