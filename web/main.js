@@ -185,6 +185,7 @@ const switchToNextLetter = function(){
 };
 
 
+
 // event listers
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -217,7 +218,13 @@ const start = function(){ // entry point
     document.getElementById("start").className += " glideAway"
 }
 
+
+
+
 createLetters();
+
+
+
 
 // Functions for letters
 
