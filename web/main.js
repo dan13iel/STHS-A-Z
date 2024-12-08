@@ -5,6 +5,9 @@ let onLoaded = null;
 let hasLetterClicked = false;
 let currentLetter = "";
 
+let webdata = {};
+
+let media = ["./media/video/AuditoriumCompressed.mp4"];
 
 //helper functions
 
@@ -108,6 +111,16 @@ const widgetWhitespace = function(name, double){
 
     return widget;
 }
+
+// Preload content functions
+
+const preloadMediaVideo = async function(path){
+    let video = await fetch(path);
+    let blob = await video.blob();
+    let url = new URL.createObjectURL(blob);
+
+}
+
 
 // Load content functions
 
