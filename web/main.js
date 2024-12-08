@@ -178,6 +178,9 @@ const switchToLetter = function(letter){
         newSpan.style.color = "#ededed";
 
         currentLetter = letter;
+        if (typeof webdata[letter] != 'undefined'){
+            container.innerHTML = webdata[letter];
+        }
         loadLetterData(letter);
     }
 };
