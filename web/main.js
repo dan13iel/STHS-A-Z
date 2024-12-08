@@ -1,4 +1,5 @@
 // For everything else
+const debugLog = true;
 let container = document.getElementById("listings");
 let lettersDiv = null;
 let onLoaded = null;
@@ -25,6 +26,13 @@ const empty = function(){
         container.innerHTML = "";
     }
 };
+
+const log = function(content){
+    if (debugLog){
+        console.log(content);
+    }
+};
+
 
 const widgetAnimation = function(name, path, description, color, double = false, controls = false){
     let widget = document.createElement("div");
@@ -213,8 +221,6 @@ document.addEventListener("keyup", function(event){
     if (event.code == "Space") {
         switchToNextLetter();
     }
-    console.log(event);
-    console.log(event.code);
 });
 
 const start = function(){ // entry point
