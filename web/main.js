@@ -9,6 +9,7 @@ let currentLetter = "";
 let webdata = {};
 
 let media = ["./media/video/AuditoriumCompressed.mp4"];
+let cachedMedia = {};
 
 //helper functions
 
@@ -22,7 +23,6 @@ const toCharArray = function(str){
 
 const empty = function(){
     if (container){
-        webdata[currentLetter] = container;
         container.innerHTML = "";
     }
 };
@@ -32,7 +32,6 @@ const log = function(content){
         console.log(content);
     }
 };
-
 
 const widgetAnimation = function(name, path, description, color, double = false, controls = false){
     let widget = document.createElement("div");
@@ -65,6 +64,10 @@ const widgetAnimation = function(name, path, description, color, double = false,
     video.autoplay = true;
     video.loop = true;
     video.muted = true;
+    let url = path
+    if (typeof cachedMedia[url] != undefined){
+        url = cachedMedia[url];
+    }
     source.src = path;
     source.type = "video/mp4";
     // todo: add more attributes here
@@ -129,9 +132,15 @@ const preloadMediaVideo = async function(path){
     let video = await fetch(path);
     let blob = await video.blob();
     let url = new URL.createObjectURL(blob);
+    return url;
 
 }
 
+const preloadMedia = async function(){
+    media.forEach(function(url){
+        cachedMedia[url] = preloadMediaVideo(url);
+    });
+};
 
 // Load content functions
 
@@ -163,6 +172,7 @@ const loadLetterData = function(letter){
     try {
         eval("letter"+letter.toUpperCase()+"()");
     } catch (e) {
+        console.error("Letter not defined: " + letter.toUpperCase());
         empty();
     }
 }
@@ -178,10 +188,8 @@ const switchToLetter = function(letter){
         newSpan.style.color = "#ededed";
 
         currentLetter = letter;
-        if (typeof webdata[letter] != 'undefined'){
-            container.innerHTML = webdata[letter];
-        }
         loadLetterData(letter);
+        log("Loaded letter: " + letter);
     }
 };
 
@@ -192,7 +200,8 @@ const switchToNextLetter = function(){
         if (currentLetter == "Z"){
             lastLetter();
         } else {
-            let newLetter = toCharArray("ABCDEFGHIJKLMNOPQRTUVWXYZ")[ind + 1]
+            let newLetter = toCharArray("ABCDEFGHIJKLMNOPQRTUVWXYZ")[ind + 1];
+            log("Switching to letter: " + newLetter);
             switchToLetter(newLetter);
         }
     }
@@ -215,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function(){
         onLoaded = false // createLetters has not completed yet
     }
 
-    switchToLetter("A")
+    switchToLetter("A") // First letter
 
 });
 
