@@ -20,7 +20,10 @@ const toCharArray = function(str){
 };
 
 const empty = function(){
-    if (container){container.innerHTML = ""}
+    if (container){
+        webdata[currentLetter] = container;
+        container.innerHTML = "";
+    }
 };
 
 const widgetAnimation = function(name, path, description, color, double = false, controls = false){
