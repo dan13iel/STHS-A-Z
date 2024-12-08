@@ -64,7 +64,7 @@ const widgetAnimation = function(name, path, description, color, double = false,
     return widget;
 }
 
-const widgetText = function(name, text, color, double = false){
+const widgetText = function(name, text, color, double = false, whitespace = 1){
     let widget = document.createElement("div");
     let title = document.createElement("span");
     let desc = document.createElement("span");
@@ -85,6 +85,8 @@ const widgetText = function(name, text, color, double = false){
     title.innerText = name;
 
     widget.appendChild(title);
+    for (let i=0;i<whitespace;i++){
+        widget.appendChild(document.createElement("br"))}
     widget.appendChild(desc);
 
     return widget
@@ -200,6 +202,27 @@ const letterA = function(){
         false       // Video controls
     );
 
+    let assemblies = widgetText(
+        "Assemblies",
+        "Assemblies are held on fridays but can be held on any day",
+        "#cb6ce6",             // Background color
+        false,                 // Double size
+        2
+    );
+
+    let aBlock = widgetAnimation(
+        "A Block",
+        "./media/video/AuditoriumCompressed.mp4",
+        "The A block is where stuff happens.",
+        "#ffbd59",  // Background color
+        true,       // Double size
+        false       // Video controls
+    );
+
+
     empty();
-    container.appendChild(auditorium)
+    container.appendChild(assemblies);
+    container.appendChild(auditorium);
+    container.appendChild(aBlock);
+    
 }

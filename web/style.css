@@ -68,17 +68,26 @@
 
     #listings{
         padding: 10px;
-        width: 590px;
+        width: 610px;
 
         margin-left:auto;
         margin-right:auto;
+
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
     }
 
     .widget{
         background-color:gray;
         margin-left: none;
-        padding: 35px;
+        padding: 25px;
         border-radius: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+
     }
 
     .widget.double{
