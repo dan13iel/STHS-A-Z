@@ -64,7 +64,30 @@ const widgetAnimation = function(name, path, description, color, double = false,
     return widget;
 }
 
-const widgetText = function(){
+const widgetText = function(name, text, color, double = false){
+    let widget = document.createElement("div");
+    let title = document.createElement("span");
+    let desc = document.createElement("span");
+
+    widget.id = "widget-" + name;
+    title.id = "widget-title";
+    desc.id = "widget-desc";
+
+    if (double) {
+        widget.className = "double"
+    } else {
+        widget.className = "single"
+    } 
+    
+    widget.className += " widget"
+    widget.style.backgroundColor = color;
+    desc.innerText = text;
+    title.innerText = name;
+
+    widget.appendChild(title);
+    widget.appendChild(desc);
+
+    return widget
 
 }
 
