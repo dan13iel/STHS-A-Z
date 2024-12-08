@@ -4,8 +4,7 @@ let lettersDiv = null;
 let onLoaded = null;
 let hasLetterClicked = false;
 let currentLetter = "";
-let interaction = false;
-let DOMContentLoaded = false;
+
 
 //helper functions
 
@@ -31,6 +30,7 @@ const widgetAnimation = function(name, path, description, color, double = false,
 
     widget.id = "widget-" + name;
     video.id = "widget-animation";
+    video.className = "widget-animation"
     title.id = "widget-title";
     desc.id = "widget-desc";
 
@@ -48,7 +48,9 @@ const widgetAnimation = function(name, path, description, color, double = false,
     widget.style.backgroundColor = color;
 
     video.controls = controls;
-    video.autoplay = false;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
     source.src = path;
     source.type = "video/mp4";
     // todo: add more attributes here
@@ -60,6 +62,10 @@ const widgetAnimation = function(name, path, description, color, double = false,
     widget.appendChild(desc);
 
     return widget;
+}
+
+const widgetText = function(){
+
 }
 
 // Load content functions
@@ -124,10 +130,10 @@ const switchToNextLetter = function(){
     }
 };
 
+
 // event listers
 
 document.addEventListener("DOMContentLoaded", function(){
-    DOMContentLoaded = true;
 
     //add the letters to the menu bar
     container = document.getElementById("listings");
@@ -145,8 +151,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 document.addEventListener("keyup", function(event){
-    interaction = true; 
-    
+
     if (event.code == "Space") {
         switchToNextLetter();
     }
@@ -166,7 +171,7 @@ const letterA = function(){
     let auditorium = widgetAnimation(
         "Auditorium",
         "./media/video/AuditoriumCompressed.mp4",
-        "This is a desc.",
+        "This is a desription. This is a desription. This is a desription. This is a desription. ",
         "#7ed957",  // Background color
         true,       // Double size
         false       // Video controls
