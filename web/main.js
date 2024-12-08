@@ -90,7 +90,23 @@ const widgetText = function(name, text, color, double = false, whitespace = 1){
     widget.appendChild(desc);
 
     return widget
+}
 
+const widgetWhitespace = function(name, double){
+    let widget = document.createElement("div");
+
+    widget.id = "widget-" + name;
+
+    if (double) {
+        widget.className = "double"
+    } else {
+        widget.className = "single"
+    } 
+    
+    widget.className += " widget";
+    widget.className += " widget-whitespace";
+
+    return widget;
 }
 
 // Load content functions
@@ -219,10 +235,16 @@ const letterA = function(){
         false       // Video controls
     );
 
+    let whitespace = widgetWhitespace(
+        "fill0",
+        false
+    );
+
 
     empty();
     container.appendChild(assemblies);
     container.appendChild(auditorium);
     container.appendChild(aBlock);
+    container.appendChild(whitespace);
     
 }

@@ -32,7 +32,9 @@
     animation: glideUpwards 1s;
     display: none;
 }
-  
+
+ 
+
 
 @media only screen and (min-width:600px) {
     /*desktop*/
@@ -76,6 +78,7 @@
         display:flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        flex-flow: flex-start;
         
     }
 
@@ -87,8 +90,12 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 20px;
-
     }
+
+    .widget-whitespace{
+        background-color:transparent!important;
+    }
+
 
     .widget.double{
         width: 290px;
