@@ -40,7 +40,6 @@ const widgetAnimation = function(name, path, description, color, double = false,
     let title = document.createElement("span");
     let desc = document.createElement("span");
 
-
     widget.id = "widget-" + name;
     video.id = "widget-animation";
     video.className = "widget-animation"
@@ -80,6 +79,41 @@ const widgetAnimation = function(name, path, description, color, double = false,
 
     return widget;
 }
+
+const widgetImage = function(name, path, description, color, double = false){
+    let widget = document.createElement("div");
+    let img = document.createElement("img");
+    let title = document.createElement("span");
+    let desc = document.createElement("span");
+
+    widget.id = "widget-" + name;
+    img.id = "widget-image";
+    img.className = "widget-image"
+    title.id = "widget-title";
+    desc.id = "widget-desc";
+
+    title.innerText = name;
+    desc.innerText = description;
+
+
+    if (double) {
+        widget.className = "double"
+    } else {
+        widget.className = "single"
+    } 
+
+    widget.className += " widget"
+    widget.style.backgroundColor = color;
+
+    img.src = path;
+
+    widget.appendChild(title);
+    widget.appendChild(img);
+    widget.appendChild(desc);
+
+    return widget;
+}
+
 
 const widgetText = function(name, text, color, double = false, whitespace = 1){
     let widget = document.createElement("div");
