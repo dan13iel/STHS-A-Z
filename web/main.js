@@ -296,7 +296,7 @@ const letterA = function(){
 
     let assemblies = widgetText(
         "Assemblies",
-        "Assemblies are held on fridays but can be held on any day",
+        "Assemblies are usally held on fridays but can be held on any day",
         "#cb6ce6",             // Background color
         false,                 // Double size
         2
@@ -305,12 +305,12 @@ const letterA = function(){
     let aBlock = widgetAnimation(
         "A Block",
         "./media/video/AuditoriumCompressed.mp4",
-        "The A block is where stuff happens.",
+        "A Block is the main building, housing rooms 1-20, including science, English, mathematics, and history classrooms, The science and math staff rooms are on the bottom floor, while the history and English staff rooms are next to room 20 on the top floor, with room 11a, an administrative room",
         "#ffbd59",  // Background color
         true,       // Double size
         false       // Video controls
     );
-
+    
     let whitespace = widgetWhitespace(
         "fill0",
         false
