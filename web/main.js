@@ -40,7 +40,6 @@ const widgetAnimation = function(name, path, description, color, double = false,
     let title = document.createElement("span");
     let desc = document.createElement("span");
 
-
     widget.id = "widget-" + name;
     video.id = "widget-animation";
     video.className = "widget-animation"
