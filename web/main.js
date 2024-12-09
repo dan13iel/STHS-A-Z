@@ -305,15 +305,18 @@ const letterA = function(){
     let aBlock = widgetAnimation(
         "A Block",
         "./media/video/A-BlockCompressed.mp4",
-        "A Block is the main building, housing rooms 1-20, including science, English, mathematics, and history classrooms, The science and math staff rooms are on the bottom floor, while the history and English staff rooms are next to room 20 on the top floor, with room 11a, an administrative room",
+        "A Block is the main building, housing rooms 1-20, including science, English, mathematics, and history classrooms.",
         "#ffbd59",  // Background color
         true,       // Double size
         false       // Video controls
     );
     
-    let whitespace = widgetWhitespace(
-        "fill0",
-        false
+    let atomi = widgetText(
+        "Atomi",
+        "<b>What is atomi for?</b><br>Atomi's primary use is for study, where for each subject, you have a section for it with lessons in it.<br><br><b>Is it mandatory?</b><br>No mostly. Whilst Atomi is an optional study resource, a teacher will sometimes assign parts of it as homework or classwork.",
+        "#38b6ff",             // Background color
+        false,                 // Double size
+        2
     );
 
 
@@ -321,6 +324,6 @@ const letterA = function(){
     container.appendChild(assemblies);
     container.appendChild(auditorium);
     container.appendChild(aBlock);
-    container.appendChild(whitespace);
+    container.appendChild(atomi);
     
 }
