@@ -304,7 +304,7 @@ const letterA = function(){
 
     let aBlock = widgetAnimation(
         "A Block",
-        "./media/video/AuditoriumCompressed.mp4",
+        "./media/video/A-BlockCompressed.mp4",
         "A Block is the main building, housing rooms 1-20, including science, English, mathematics, and history classrooms, The science and math staff rooms are on the bottom floor, while the history and English staff rooms are next to room 20 on the top floor, with room 11a, an administrative room",
         "#ffbd59",  // Background color
         true,       // Double size
