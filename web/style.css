@@ -146,6 +146,12 @@
         border-radius: 12px;
     }
 
+    #widget-image {
+        width:260px;
+        margin: 15px 15px;
+        border-radius: 12px;
+    }
+
 
 
     #widget-title{
@@ -262,6 +268,15 @@
     }
 
     #widget-animation {
+        width:80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        border-radius: 12px;
+    }
+
+    #widget-image {
         width:80%;
         margin-left: 10%;
         margin-right: 10%;
