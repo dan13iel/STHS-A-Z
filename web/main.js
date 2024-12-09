@@ -46,8 +46,8 @@ const widgetAnimation = function(name, path, description, color, double = false,
     title.id = "widget-title";
     desc.id = "widget-desc";
 
-    title.innerText = name;
-    desc.innerText = description;
+    title.innerHTML = name;
+    desc.innerHTML = description;
 
 
     if (double) {
@@ -92,8 +92,8 @@ const widgetImage = function(name, path, description, color, double = false){
     title.id = "widget-title";
     desc.id = "widget-desc";
 
-    title.innerText = name;
-    desc.innerText = description;
+    title.innerHTML = name;
+    desc.innerHTML = description;
 
 
     if (double) {
@@ -133,8 +133,8 @@ const widgetText = function(name, text, color, double = false, whitespace = 1){
     
     widget.className += " widget"
     widget.style.backgroundColor = color;
-    desc.innerText = text;
-    title.innerText = name;
+    desc.innerHTML = text;
+    title.innerHTML = name;
 
     widget.appendChild(title);
     for (let i=0;i<whitespace;i++){
@@ -183,7 +183,7 @@ const createLetters = function(){
     let letters = document.getElementById("letters");
     let div = document.createElement("div");
     
-    toCharArray("ABCDEFGHIJKLMNOPQRTUVWXYZ").forEach(function(char){
+    toCharArray("ABCDEFGHIJKLMNOPQRSTUVWXYZ").forEach(function(char){
         let span = document.createElement("span");
         span.innerText = ` ${char}`;
         span.setAttribute("onclick", `switchToLetter("${char}")`);
@@ -235,7 +235,7 @@ const switchToNextLetter = function(){
         if (currentLetter == "Z"){
             lastLetter();
         } else {
-            let newLetter = toCharArray("ABCDEFGHIJKLMNOPQRTUVWXYZ")[ind + 1];
+            let newLetter = toCharArray("ABCDEFGHIJKLMNOPQRSTUVWXYZ")[ind + 1];
             log("Switching to letter: " + newLetter);
             switchToLetter(newLetter);
         }
@@ -288,7 +288,7 @@ const letterA = function(){
     let auditorium = widgetAnimation(
         "Auditorium",
         "./media/video/AuditoriumCompressed.mp4",
-        "Built in 1952, the Sydney Technical High School auditorium is a historic venue with a capacity of around 1000, used for both school performances and important examinations. Home to a large instrument collection, it showcases the school's rich artistic heritage and musical talent. ",
+        "The STHS Auditorium is used for many things, such as musical preformances, assemblies, and large exams.",
         "#7ed957",  // Background color
         true,       // Double size
         false       // Video controls
@@ -296,7 +296,7 @@ const letterA = function(){
 
     let assemblies = widgetText(
         "Assemblies",
-        "Assemblies are usally held on fridays but can be held on any day",
+        "<i>Assembly</i>: a meeting of a student body and usually faculty for administrative, educational, or recreational purposes.<br><br>Assemblies are held most of the time on fridays, although they can also be run during other days of the week.",
         "#cb6ce6",             // Background color
         false,                 // Double size
         2
