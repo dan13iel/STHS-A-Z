@@ -315,7 +315,13 @@ const letterA = function(){
         "fill0",
         false
     );
-
+    let atomi=widgetImage(
+        "Atomi",
+        "https://irp.cdn-website.com/f0649308/dms3rep/multi/atomi-logo-cb501e83.jpg",
+        "ATOMI is an online learning platform designed specifically for students like you. It's a fun and interactive way to learn and explore various subjects. Using ATOMI is easy and engaging! You can explore the pre-loaded subjects, including maths, science, geography, and more, and learn through interactive lessons, videos, animations, and simulations. ATOMI's interactive lessons and activities help you learn and understand complex concepts in a clear and concise manner. You can also complete quizzes and games to reinforce your learning, and track your progress to stay motivated and focused. ATOMI is designed to help you learn and understand different subjects in a fun and engaging way. The platform's interactive lessons and activities can help you    improve your understanding of complex concepts, develop problem-solving skills, and boost your confidence across various subjects. ATOMI can also help you prepare for exams and assessments, and foster curiosity and creativity in your learning. Overall, ATOMI is a powerful tool that can help you achieve your learning goals and develop a deeper understanding of different subjects",
+        true,
+        2
+    )
 
     empty();
     container.appendChild(assemblies);
