@@ -26,11 +26,6 @@ body {
     font-family: var(--title-font);
 }
 
-
-div#letters span{ /* navigation letters */
-    width:15px;
-}
-
 .widget-whitespace{
     background-color:transparent!important;
 }
