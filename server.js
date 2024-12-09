@@ -16,6 +16,8 @@ http.createServer((req, res) => {
     } else {
       if (req.url.endsWith(".js")){
         res.setHeader("content-type", "text/javascript");
+      } else if (req.url.endsWith(".mp4")) {
+        res.setHeader("content-type", "video/mp4");
       }
       res.statusCode = 200;
       res.write(data);
