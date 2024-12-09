@@ -48,7 +48,7 @@ div#letters span{ /* navigation letters */
     font-size: 16.6px;
 }
 
-@media only screen and (min-width:620px) {
+@media only screen and (min-width:650px) {
     /*desktop*/
 
     #letters {
@@ -117,7 +117,7 @@ div#letters span{ /* navigation letters */
     }
 }
 
-@media only screen and (max-width:620px) {
+@media only screen and (max-width:650px) {
     /* Mobile */
     body {
         font-family: var(--title-font);
