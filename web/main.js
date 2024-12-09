@@ -254,7 +254,7 @@ const letterA = function(){
     let auditorium = widgetAnimation(
         "Auditorium",
         "./media/video/AuditoriumCompressed.mp4",
-        "This is a desription. This is a desription. This is a desription. This is a desription. ",
+        "Built in 1952, the Sydney Technical High School auditorium is a historic venue with a capacity of around 1000, used for both school performances and important examinations. Home to a large instrument collection, it showcases the school's rich artistic heritage and musical talent. ",
         "#7ed957",  // Background color
         true,       // Double size
         false       // Video controls
