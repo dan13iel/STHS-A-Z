@@ -16,6 +16,7 @@
 /* width */
 ::-webkit-scrollbar {
     width: 0px;
+    display: none;
   }
   
   /* Track */
@@ -204,11 +205,14 @@
 
         text-align: center;
         font-weight: bold;
-        font-size:20px;
+        font-size:28px;
     }
 
     div#letters{
-        width: 550px;
+        width: 75%;
+        overflow: scroll;
+        height: 32px!important;
+        
     }
 
     span{
@@ -217,7 +221,7 @@
 
     #listings{
         padding: 10px;
-        width: 610px;
+        width: 100%;
 
         margin-left:auto;
         margin-right:auto;
@@ -226,6 +230,7 @@
         flex-wrap: wrap;
         justify-content: space-around;
         flex-flow: flex-start;
+        margin: 0px;
         
     }
 
@@ -237,6 +242,10 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 20px;
+        text-align: center;
+        min-height: 170px;
+        max-height: 400px;
+        overflow: hidden;
     }
 
     .widget-whitespace{
@@ -245,17 +254,19 @@
 
 
     .widget.double{
-        width: 290px;
-        text-align: center;
+        width: 85%;
     }
 
     .widget.single{
-        width: 170px;
+        width: 85%;
     }
 
     #widget-animation {
-        width:260px;
-        margin: 15px 15px;
+        width:80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 4%;
+        margin-bottom: 4%;
         border-radius: 12px;
     }
 
