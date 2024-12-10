@@ -289,24 +289,15 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 document.addEventListener("keyup", function(event){
-
     if (event.code == "Space") {
         switchToNextLetter();
     }
 });
 
-const start = function(){ // entry point
-    document.getElementById("start").className += " glideAway"
-}
-
-
-
 window.addEventListener('resize', setSettings);
 
 preloadMedia();
 createLetters();
-
-
 
 
 // Functions for letters
@@ -345,14 +336,11 @@ const letterA = function(){
         false,                 // Double size
         2
     );
-
-
     empty();
     container.appendChild(assemblies);
     container.appendChild(auditorium);
     container.appendChild(aBlock);
     container.appendChild(atomi);
-    
 }
 
 
