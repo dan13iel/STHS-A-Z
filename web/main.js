@@ -169,14 +169,26 @@ const widgetWhitespace = function(name, double){
 }
 
 const setSettings = async function(){
-    if (sideNav && window.innerWidth > 650) {
+    if (sideNav && window.innerWidth > 750) {
         let lettersDiv = document.getElementById("letters").style;
-        let spanLetters = document.getElementsByClassName
         lettersDiv.position = "absolute";
         lettersDiv.height = "90%";
         lettersDiv.top = "5%";
         lettersDiv.left = "5%";
-        lettersDiv.width = "26px";
+        lettersDiv.width = "24px";
+        lettersDiv.paddingLeft = "32px";
+        lettersDiv.paddingRight = "32px";
+        container.style.transform = "translateX(calc(24px + 10%))"
+    } else {
+        let lettersDiv = document.getElementById("letters").style;
+        lettersDiv.position = "";
+        lettersDiv.height = "";
+        lettersDiv.top = "";
+        lettersDiv.left = "";
+        lettersDiv.width = "";
+        lettersDiv.paddingLeft = "";
+        lettersDiv.paddingRight = "";
+        container.style.transform = ""
     }
 }
 
