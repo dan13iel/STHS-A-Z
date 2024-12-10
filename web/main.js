@@ -243,6 +243,7 @@ const switchToLetter = function(letter){
         newSpan.style.color = "#ededed";
 
         currentLetter = letter;
+        window.location.hash = letter.toUpperCase();
         loadLetterData(letter);
         log("Loaded letter: " + letter);
     }
@@ -280,8 +281,11 @@ document.addEventListener("DOMContentLoaded", function(){
         onLoaded = false // createLetters has not completed yet
     }
 
-    switchToLetter("A") // First letter
-
+    if (window.location.hash == "" || !toCharArray("ABCDEFGHIJKLMNOPQRSTUVWXYZ").includes(window.location.hash.toUpperCase())){
+        switchToLetter("A") // First letter
+    } else if (toCharArray("ABCDEFGHIJKLMNOPQRSTUVWXYZ").includes(window.location.hash.toUpperCase())){
+        switchToLetter(window.location.hash.toUpperCase())
+    }
 });
 
 document.addEventListener("keyup", function(event){
