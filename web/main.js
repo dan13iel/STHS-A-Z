@@ -1,5 +1,6 @@
 // For everything else
 const debugLog = true;
+const sideNav = true;
 let container = document.getElementById("listings");
 let lettersDiv = null;
 let onLoaded = null;
@@ -161,6 +162,18 @@ const widgetWhitespace = function(name, double){
     return widget;
 }
 
+const setSettings = async function(){
+    if (sideNav && window.innerWidth > 650) {
+        let lettersDiv = document.getElementById("letters").style;
+        let spanLetters = document.getElementsByClassName
+        lettersDiv.position = "absolute";
+        lettersDiv.height = "90%";
+        lettersDiv.top = "5%";
+        lettersDiv.left = "5%";
+        lettersDiv.width = "26px";
+    }
+}
+
 // Preload content functions
 
 const preloadMediaVideo = async function(path){
@@ -249,6 +262,7 @@ const switchToNextLetter = function(){
 document.addEventListener("DOMContentLoaded", function(){
 
     //add the letters to the menu bar
+    setSettings();
     container = document.getElementById("listings");
     if (lettersDiv != null){
         let letters = document.getElementById("letters");
@@ -276,6 +290,7 @@ const start = function(){ // entry point
 
 
 
+window.addEventListener('resize', setSettings);
 
 createLetters();
 
