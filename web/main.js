@@ -175,9 +175,9 @@ const setSettings = async function(){
         lettersDiv.height = "90%";
         lettersDiv.top = "5%";
         lettersDiv.left = "5%";
-        lettersDiv.width = "24px";
-        lettersDiv.paddingLeft = "32px";
-        lettersDiv.paddingRight = "32px";
+        lettersDiv.width = "20px";
+        lettersDiv.paddingLeft = "34px";
+        lettersDiv.paddingRight = "34px";
         container.style.transform = "translateX(calc(24px + 10%))"
     } else {
         let lettersDiv = document.getElementById("letters").style;
