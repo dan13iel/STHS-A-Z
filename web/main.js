@@ -9,7 +9,7 @@ let currentLetter = "";
 
 let webdata = {};
 
-let media = ["./media/video/AuditoriumCompressed.mp4"];
+let media = ["./media/video/AuditoriumCompressed.mp4", "./media/video/A-BlockCompressed.mp4"];
 let cachedMedia = {};
 
 //helper functions
@@ -34,6 +34,10 @@ const log = function(content){
     }
 };
 
+const relativeToFullURL = function(path){
+    return new URL(`${window.location.origin}/${path}`).href
+}
+
 const widgetAnimation = function(name, path, description, color, double = false, controls = false){
     let widget = document.createElement("div");
     let video = document.createElement("video");
@@ -46,6 +50,7 @@ const widgetAnimation = function(name, path, description, color, double = false,
     video.className = "widget-animation"
     title.id = "widget-title";
     desc.id = "widget-desc";
+    source.className = "widget-video-source";
 
     title.innerHTML = name;
     desc.innerHTML = description;
@@ -64,11 +69,12 @@ const widgetAnimation = function(name, path, description, color, double = false,
     video.autoplay = true;
     video.loop = true;
     video.muted = true;
+    
     let url = path
-    if (typeof cachedMedia[url] != undefined){
-        url = cachedMedia[url];
+    if (cachedMedia[path] != undefined){
+        url = cachedMedia[path]
     }
-    source.src = path;
+    source.src = url;
     source.type = "video/mp4";
     // todo: add more attributes here
 
@@ -179,15 +185,16 @@ const setSettings = async function(){
 const preloadMediaVideo = async function(path){
     let video = await fetch(path);
     let blob = await video.blob();
-    let url = new URL.createObjectURL(blob);
+    let url = URL.createObjectURL(blob);
     return url;
-
 }
 
 const preloadMedia = async function(){
-    media.forEach(function(url){
-        cachedMedia[url] = preloadMediaVideo(url);
+    media.forEach(await async function(url){
+        cachedMedia[url] = await preloadMediaVideo(url);
+        console.log("Cached")
     });
+    console.log(cachedMedia);
 };
 
 // Load content functions
@@ -292,6 +299,7 @@ const start = function(){ // entry point
 
 window.addEventListener('resize', setSettings);
 
+preloadMedia();
 createLetters();
 
 
@@ -341,4 +349,42 @@ const letterA = function(){
     container.appendChild(aBlock);
     container.appendChild(atomi);
     
+}
+
+
+const letterB = function(){
+    let byod = widgetText(
+        "BYOD",
+        "The Bring Your Own Device (BYOD) program at Sydney Technical High School lets students bring their laptops or tablets to school. This helps enhance their learning and develop digital skills. The school ensures a secure network for the effective use of these devices.",
+        "#38b6ff",             // Background color
+        true,                 // Double size
+        2
+    );
+
+    let assemblies = widgetText(
+        "Assemblies",
+        "<i>Assembly</i>: a meeting of a student body and usually faculty for administrative, educational, or recreational purposes.<br><br>Assemblies are held most of the time on fridays, although they can also be run during other days of the week.",
+        "#cb6ce6",             // Background color
+        false,                 // Double size
+        2
+    );
+
+    let aBlock = widgetAnimation(
+        "A Block",
+        "./media/video/A-BlockCompressed.mp4",
+        "A Block is the main building, housing rooms 1-20, including science, English, mathematics, and history classrooms.",
+        "#ffbd59",  // Background color
+        true,       // Double size
+        false       // Video controls
+    );
+    
+    let atomi = widgetText(
+        "Atomi",
+        "<b>What is atomi for?</b><br>Atomi's primary use is for study, where for each subject, you have a section for it with lessons in it.<br><br><b>Is it mandatory?</b><br>No mostly. Whilst Atomi is an optional study resource, a teacher will sometimes assign parts of it as homework or classwork.",
+        "#38b6ff",             // Background color
+        false,                 // Double size
+        2
+    );
+    empty();
+    container.appendChild(byod);
 }
